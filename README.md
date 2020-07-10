@@ -41,10 +41,6 @@ alt="node occ" width="240" height="180" border="10" /></a>
 -   solid properties ( faces, edges, vertices, area , volume )
 -   import export ( STEP BREP )
 
-### sample web application
-
-[node-occ-sample](https://github.com/erossignon/node-occ-sample): sample nodejs/express REST API server to build solid , based on threejs
-
 ## installing node-occ from npm
 
 ```
@@ -53,9 +49,7 @@ $npm install node-occ
 
 ## building node-occ from source : prerequisites
 
-### on Linux
-
-#### on ubuntu
+### on Ubuntu
 
 (use nodejs 12.0)
 
@@ -73,13 +67,36 @@ git clone --recursive https://github.com/erossignon/node-occ.git
 cd node-occ
 export OCCT_PACKAGE=occt-7.2.0
 export LD_LIBRARY_PATH=`pwd`/${OCCT_PACKAGE}/lib:$LD_LIBRARY_PATH
+# Download occt from https://github.com/OpenWebCAD/occt_builder/releases/download/7.2.0/occt-7.2.0-linux.tgz
+# Extract into occt-7.2.0
 npm install --build-from-source
 make test
 ```
 
-### on windows
+### sample web application
 
--   follow the tutorial in the [wiki](https://github.com/erossignon/node-occ/wiki)
+[node-occ-sample](https://github.com/erossignon/node-occ-sample): sample nodejs/express REST API server to build solid , based on threejs
+
+```bash
+git clone https://github.com/OpenWebCAD/node-occ-sample.git
+cd node-occ-sample
+# Install dependencies
+npm install
+
+# Install node-occ mannually
+cd node_modules
+git clone --recursive https://github.com/erossignon/node-occ.git
+cd node-occ
+export OCCT_PACKAGE=occt-7.2.0
+export LD_LIBRARY_PATH=`pwd`/${OCCT_PACKAGE}/lib:$LD_LIBRARY_PATH
+# Download occt from https://github.com/OpenWebCAD/occt_builder/releases/download/7.2.0/occt-7.2.0-linux.tgz
+# Extract into occt-7.2.0
+npm install --build-from-source
+make test
+
+# Run
+npm start
+```
 
 ## dependencies:
 
