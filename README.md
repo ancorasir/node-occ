@@ -88,6 +88,7 @@ cd node_modules
 git clone --recursive https://github.com/erossignon/node-occ.git
 cd node-occ
 export OCCT_PACKAGE=occt-7.2.0
+# add this to your .bashrc
 export LD_LIBRARY_PATH=`pwd`/${OCCT_PACKAGE}/lib:$LD_LIBRARY_PATH
 # Download occt from https://github.com/OpenWebCAD/occt_builder/releases/download/7.2.0/occt-7.2.0-linux.tgz
 # Extract into occt-7.2.0
@@ -95,6 +96,7 @@ npm install --build-from-source
 make test
 
 # Run
+cd ../..
 npm start
 ```
 
